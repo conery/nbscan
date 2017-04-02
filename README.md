@@ -1,7 +1,7 @@
 # nbscan
 
 nbscan.py is a Python script that will search for and print contents of cells in Jupyter notebooks. 
-The script was written to be used to search through notebooks managed by the nbgrader pipline (http://nbgrader.readthedocs.io) but will
+The script was written to search through notebooks managed by the nbgrader pipline (http://nbgrader.readthedocs.io) but will
 work for any Jupyter notebooks.
 
 Cells can be filtered by type 

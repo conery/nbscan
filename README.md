@@ -8,6 +8,12 @@ Cells can be filtered by type
 (code or markdown), by nbgrader tag ID, or by those that match a regular expression.  
 Specify files to scan by name or recursively search a directory to find notebooks.
 
+## Installation
+
+```
+pip3 install git+https://github.com/conery/nbscan.git
+```
+
 ## Usage
 
 ```

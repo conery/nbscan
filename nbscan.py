@@ -18,6 +18,8 @@ import re
 import random
 import nbformat
 
+from nbformat.reader import NotJSONError
+
 def build_file_list(args):
     '''
     Return a list of file names to scan.  The list is initialized with names specified
@@ -120,7 +122,12 @@ def scan_files(files, args, pattern):
         return '\033[03{:1d}m{}\033[m'.format(cn, text)
         
     for fn in files:
-        nb = nbformat.read(fn, args.nbformat)
+        try:
+            nb = nbformat.read(fn, args.nbformat)
+        except (NotJSONError, UnicodeDecodeError) as e:
+            print(e, fn)
+            continue
+
         matches = []
         cell_type = 'code' if args.code else 'markdown' if args.markdown else None
         
